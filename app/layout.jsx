@@ -1,4 +1,5 @@
 import './globals.css';
+import { Analytics } from '@vercel/analytics/next';
 import ScrollReveal from './components/ScrollReveal';
 import UTMCapture from './components/UTMCapture';
 import CookieBanner from './components/CookieBanner';
@@ -42,6 +43,7 @@ export default function RootLayout({ children }) {
       </head>
       <body>
         {children}
+        <Analytics />
         <ScrollReveal />
         <UTMCapture />
         <CookieBanner />
