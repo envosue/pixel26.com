@@ -184,9 +184,9 @@ export default function HVACHub() {
       {/* ── BOTTOM CTA ── */}
       <section
         className={'relative overflow-hidden ' + SEC}
-        style={{ background: 'radial-gradient(900px 540px at 50% 0%, rgba(23,168,190,.22), transparent 60%), linear-gradient(180deg,#083344 0%,#062430 100%)' }}
+        style={{ background: 'linear-gradient(135deg,#0F6F7E 0%,#17A8BE 100%)' }}
       >
-        <div className="absolute inset-0 bg-[url('/web-assets/pixel26-pattern-tile.svg')] bg-[length:200px] opacity-[.05]" />
+        <div className="absolute inset-0 bg-[url('/web-assets/pixel26-pattern-tile.svg')] bg-[length:200px] opacity-[.08]" />
         <div className={`relative ${WRAP} text-center`}>
           <div className="font-mono text-[13px] tracking-[.2em] uppercase text-teal-light mb-5">Not sure where to start?</div>
           <h2 className="font-display font-bold text-[clamp(30px,4vw,52px)] leading-[1.1] tracking-[-.02em] text-white m-0 mb-6 max-w-[680px] mx-auto">
