@@ -441,19 +441,19 @@ export default function HVACEdmonton() {
       >
         <div className="absolute inset-0 bg-[url('/web-assets/pixel26-pattern-tile.svg')] bg-[length:200px] opacity-[.08]" />
         <div className={`relative ${WRAP} text-center`}>
-          <div className="font-mono text-[13px] tracking-[.2em] uppercase text-teal-light mb-5">Ready to grow in Edmonton?</div>
+          <div className="font-mono text-[13px] tracking-[.2em] uppercase text-white/60 mb-5">Ready to grow in Edmonton?</div>
           <h2 className="font-display font-bold text-[clamp(32px,4.5vw,58px)] leading-[1.06] tracking-[-.025em] text-white m-0 mb-6 max-w-[760px] mx-auto">
             Let's get your Edmonton HVAC company on page one —{' '}
-            <span className="text-orange">before the next cold snap.</span>
+            <span className="text-navy">before the next cold snap.</span>
           </h2>
-          <p className="text-[18px] leading-[1.65] text-white/65 m-0 mb-10 max-w-[520px] mx-auto">
+          <p className="text-[18px] leading-[1.65] text-white/85 m-0 mb-10 max-w-[520px] mx-auto">
             Free 30-minute discovery call. We'll review your current online presence and show you exactly where Edmonton homeowners aren't finding you.
           </p>
           <Link href="/contact" className={btnPrimary + ' text-[18px] px-[44px] py-[18px]'}>
             Book your free audit →
           </Link>
           <div className="mt-8">
-            <Link href="/hvac/calgary" className="font-mono text-[13px] tracking-[.06em] text-teal-light/70 hover:text-teal-light no-underline transition-colors">
+            <Link href="/hvac/calgary" className="font-mono text-[13px] tracking-[.06em] text-white/50 hover:text-white/80 no-underline transition-colors">
               Looking for Calgary? →
             </Link>
           </div>

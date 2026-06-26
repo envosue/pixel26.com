@@ -188,7 +188,7 @@ export default function HVACHub() {
       >
         <div className="absolute inset-0 bg-[url('/web-assets/pixel26-pattern-tile.svg')] bg-[length:200px] opacity-[.08]" />
         <div className={`relative ${WRAP} text-center`}>
-          <div className="font-mono text-[13px] tracking-[.2em] uppercase text-teal-light mb-5">Not sure where to start?</div>
+          <div className="font-mono text-[13px] tracking-[.2em] uppercase text-white/60 mb-5">Not sure where to start?</div>
           <h2 className="font-display font-bold text-[clamp(30px,4vw,52px)] leading-[1.1] tracking-[-.02em] text-white m-0 mb-6 max-w-[680px] mx-auto">
             Book a free 30-minute audit. We'll show you exactly where you're losing jobs online.
           </h2>
