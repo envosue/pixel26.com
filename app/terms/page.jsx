@@ -352,7 +352,84 @@ export default function Terms() {
           </ul>
 
           {/* 15 */}
-          <h2 className={H2}>15 · Contact</h2>
+          <h2 className={H2}>15 · Third-Party Services &amp; Cookies</h2>
+          <h3 className={H3}>15.1 Calendly Booking Widget</h3>
+          <p className={P}>
+            The Pixel26 website uses <strong>Calendly</strong>, a scheduling service operated by
+            Calendly LLC, to enable visitors to book free strategy calls. The Calendly inline
+            booking widget is embedded on our Contact page and is provided by a third party.
+          </p>
+          <p className={P}>
+            When you interact with the Calendly widget or book a meeting, Calendly may collect and
+            process personal information including your name, email address, time zone, and calendar
+            availability. Calendly may also set cookies or similar tracking technologies on your
+            device to enable its functionality. Pixel26 does not control how Calendly collects or
+            processes your personal information. Your use of the Calendly booking widget is subject
+            to{' '}
+            <a
+              href="https://calendly.com/privacy"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-teal-dark underline underline-offset-2"
+            >
+              Calendly's Privacy Policy
+            </a>{' '}
+            and{' '}
+            <a
+              href="https://calendly.com/tos"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-teal-dark underline underline-offset-2"
+            >
+              Terms of Service
+            </a>
+            .
+          </p>
+          <p className={P}>
+            Meeting information collected through Calendly (name, email, selected time) is
+            accessible to Pixel26 for the sole purpose of conducting the booked consultation.
+            Pixel26 does not sell or share this information with unaffiliated third parties except
+            as required to deliver the consultation (e.g., video conferencing tools).
+          </p>
+
+          <h3 className={H3}>15.2 Cookies &amp; Similar Technologies</h3>
+          <p className={P}>
+            This website uses the following categories of cookies:
+          </p>
+          <ul className={UL}>
+            <li className={LI}>
+              <strong>Strictly necessary cookies</strong> — required for core site functionality
+              (e.g., session state, security). These cannot be disabled.
+            </li>
+            <li className={LI}>
+              <strong>Functional cookies</strong> — enable enhanced functionality such as the
+              Calendly booking widget and remembering your cookie preference.
+            </li>
+            <li className={LI}>
+              <strong>Analytics &amp; marketing cookies</strong> — used to understand how visitors
+              interact with the site and to measure the effectiveness of advertising campaigns
+              (including Google Ads conversion tracking via <code>gclid</code> and UTM parameters
+              stored in <code>sessionStorage</code>).
+            </li>
+          </ul>
+          <p className={P}>
+            When you visit this website for the first time, a cookie consent banner will appear.
+            By clicking <strong>"Accept all"</strong>, you consent to the use of all cookie
+            categories described above. By clicking <strong>"Decline"</strong>, only strictly
+            necessary cookies will be used. You may change your preference at any time by clearing
+            your browser's local storage for this site and reloading the page.
+          </p>
+          <p className={P}>
+            For full details on how Pixel26 handles personal information, including information
+            collected through cookies and the Calendly widget, please see our{' '}
+            <a href="/privacy" className="text-teal-dark underline underline-offset-2">
+              Privacy Policy
+            </a>
+            .
+          </p>
+
+          {/* 16 */}
+          <h2 className={H2}>16 · Contact</h2>
           <p className={P}>
             For questions or concerns about these Terms, please contact:
           </p>
