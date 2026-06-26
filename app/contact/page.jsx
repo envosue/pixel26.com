@@ -3,6 +3,7 @@ import { useState, useRef, useEffect } from 'react';
 import Nav from '../components/Nav';
 import Footer from '../components/Footer';
 import ObfuscatedContact from '../components/ObfuscatedContact';
+import { getStoredUTMs } from '../components/UTMCapture';
 
 const LBL = 'font-mono text-[12px] tracking-[.1em] uppercase text-teal-dark mb-[9px] font-semibold';
 const FIELD = 'p26-field font-sans text-[16px] text-navy bg-cloud border-[1.5px] border-line rounded-[12px] px-4 py-3.5 transition-[border-color,box-shadow] duration-[180ms]';
@@ -17,8 +18,12 @@ export default function Contact() {
   const [status, setStatus] = useState('idle'); // idle | sending | done | error
   const [budget, setBudget] = useState('');
   const [service, setService] = useState('');
+  const [utms, setUtms] = useState({});
   const loadedAt = useRef(0);
-  useEffect(() => { loadedAt.current = Date.now(); }, []);
+  useEffect(() => {
+    loadedAt.current = Date.now();
+    setUtms(getStoredUTMs());
+  }, []);
 
   const onSubmit = async (e) => {
     e.preventDefault();
@@ -47,7 +52,7 @@ export default function Contact() {
       const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ...d, elapsed }),
+        body: JSON.stringify({ ...d, elapsed, ...utms }),
       });
       if (!res.ok) throw new Error('bad response');
       setStatus('done');
@@ -106,9 +111,17 @@ export default function Contact() {
               </div>
             ) : (
               <form onSubmit={onSubmit} noValidate className="bg-white border-[1.5px] border-line rounded-[22px] p-[clamp(28px,3.4vw,44px)] shadow-[0_24px_60px_rgba(8,51,68,.08)]">
+                {/* Honeypot (spam) */}
                 <div aria-hidden="true" className="absolute left-[-9999px] w-px h-px overflow-hidden">
                   <label>Leave this field empty<input type="text" name="company_url" tabIndex={-1} autoComplete="off" defaultValue="" /></label>
                 </div>
+                {/* Hidden UTM / GCLID fields — populated from sessionStorage */}
+                {utms.gclid        && <input type="hidden" name="gclid"         value={utms.gclid} />}
+                {utms.utm_source   && <input type="hidden" name="utm_source"    value={utms.utm_source} />}
+                {utms.utm_medium   && <input type="hidden" name="utm_medium"    value={utms.utm_medium} />}
+                {utms.utm_campaign && <input type="hidden" name="utm_campaign"  value={utms.utm_campaign} />}
+                {utms.utm_term     && <input type="hidden" name="utm_term"      value={utms.utm_term} />}
+                {utms.utm_content  && <input type="hidden" name="utm_content"   value={utms.utm_content} />}
                 <div className="p26-formgrid">
                   <div className="flex flex-col">
                     <label className={LBL}>Name *</label>

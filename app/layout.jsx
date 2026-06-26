@@ -1,5 +1,6 @@
 import './globals.css';
 import ScrollReveal from './components/ScrollReveal';
+import UTMCapture from './components/UTMCapture';
 
 export const metadata = {
   metadataBase: new URL('https://pixel26.com'),
@@ -41,6 +42,7 @@ export default function RootLayout({ children }) {
       <body>
         {children}
         <ScrollReveal />
+        <UTMCapture />
       </body>
     </html>
   );

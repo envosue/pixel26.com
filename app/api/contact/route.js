@@ -16,7 +16,11 @@ export async function POST(request) {
     return NextResponse.json({ ok: false, error: 'Invalid JSON' }, { status: 400 });
   }
 
-  const { name, email, service, message } = data || {};
+  const {
+    name, email, service, message,
+    // Google Ads campaign attribution
+    gclid, utm_source, utm_medium, utm_campaign, utm_term, utm_content,
+  } = data || {};
   const emailOk = /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(String(email || '').trim());
 
   // ── Spam-bot guards (server-side; never trust the client alone) ──
@@ -43,11 +47,19 @@ export async function POST(request) {
   //   });
   // -----------------------------------------------------------------------
 
+  // Build attribution object — only include keys that were actually sent
+  const attribution = Object.fromEntries(
+    Object.entries({ gclid, utm_source, utm_medium, utm_campaign, utm_term, utm_content })
+      .filter(([, v]) => v != null && String(v).trim() !== '')
+  );
+
   console.log('[contact] new submission:', {
     name, email, service,
     company: data.company || '',
     budget: data.budget || '',
     message,
+    attribution,          // Google Ads campaign keys (empty object if organic)
+    is_paid: !!gclid,     // true = confirmed Google Ads click
     at: new Date().toISOString(),
   });
 
