@@ -25,15 +25,14 @@ function buildPixels() {
 }
 
 const SERVICES = [
-  { num: '01', title: 'Web Design & Build', desc: 'Conversion-focused websites designed and built to feel premium and load fast.', tag: 'Explore web design' },
-  { num: '02', title: 'SEO', desc: 'Technical and content SEO that compounds — rankings that keep paying off.', tag: 'Explore SEO' },
-  { num: '03', title: 'Google Ads', desc: 'Paid campaigns engineered for ROI, with every dollar tracked to revenue.', tag: 'Explore Ads' },
+  { num: '01', title: 'Web Design & Build', desc: 'Conversion-focused websites designed and built to feel premium and load fast. Delivered in 5 weeks with a written guarantee.', tag: 'Learn more' },
+  { num: '02', title: 'SEO', desc: 'Technical and content SEO that compounds — rankings that keep paying off long after the work is done.', tag: 'Learn more' },
 ];
 
 const PROCESS = [
   { num: '01', title: 'Discover', desc: 'We dig into your goals, audience and the numbers that matter to your business.' },
   { num: '02', title: 'Design & build', desc: 'A premium, conversion-led website — designed, written and engineered to perform.' },
-  { num: '03', title: 'Launch & rank', desc: 'We ship, then layer on SEO and Google Ads to start driving qualified traffic.' },
+  { num: '03', title: 'Launch & rank', desc: 'We ship, then layer on SEO to start driving qualified organic traffic from day one.' },
   { num: '04', title: 'Grow & report', desc: 'Monthly optimisation and plain-English reporting tied to real outcomes.' },
 ];
 
@@ -78,34 +77,14 @@ const PRICING = [
     guarantee: 'Measurable ranking improvements in 90 days or Month 4 is free.',
     cta: 'Book a call',
   },
-  {
-    service: 'Website + SEO + Google Ads',
-    name: 'Scale',
-    price: '$7,500',
-    billing: '/mo',
-    billingNote: '3-month minimum · $22,500 total',
-    stackValue: '$38,000+',
-    desc: 'The full growth engine — website, organic rankings, and paid leads running simultaneously from day one.',
-    featured: false,
-    features: [
-      'Everything in Grow (website + SEO)',
-      'Google Ads: Search + Remarketing campaigns',
-      '1 custom landing page built per quarter',
-      'Conversion tracking & Google Tag Manager',
-      'A/B testing across 3 ad variations per month',
-      'Bi-weekly strategy calls + full-funnel dashboard',
-    ],
-    guarantee: 'Beat your current cost-per-lead in 60 days or Month 2 is refunded.',
-    cta: 'Talk to us',
-  },
 ];
 
 const FAQ = [
-  { q: 'How long does a website take?', a: 'The Launch package goes live in 5 weeks — that\'s our written guarantee. If we miss it, we keep working at no extra charge until we ship. Grow and Scale clients get their site built in Month 1 of the retainer.' },
-  { q: 'What if I already have a website?', a: 'No problem. On the Grow and Scale packages, Month 1 converts from a new website build to a full conversion audit and CRO optimisation of your existing site — same effort, same value, no forced rebuild.' },
-  { q: 'What does the "stack value" mean on the pricing cards?', a: 'It\'s the combined retail value of every deliverable in the package if you sourced each piece separately — design, copywriting, content writing, link building, ad management. You get all of it for the package price, which is why ROI typically lands within the first new client you win.' },
-  { q: 'What if I don\'t hit the guarantee?', a: 'Every package has a specific, written guarantee. Launch: free work until we ship. Grow: Month 4 is free if you don\'t see measurable ranking improvements in 90 days. Scale: Month 2 is fully refunded if we don\'t beat your current cost-per-lead in 60 days.' },
-  { q: 'What does reporting look like?', a: 'A live performance dashboard plus a monthly review in plain English: what we did, what it moved, and what\'s next. Scale clients also get a full-funnel view combining organic and paid in one place. No vanity metrics — just the numbers tied to your revenue.' },
+  { q: 'How long does a website take?', a: 'The Launch package goes live in 5 weeks — that\'s our written guarantee. If we miss it, we keep working at no extra charge until we ship. Grow clients get their site built in Month 1 of the retainer.' },
+  { q: 'What if I already have a website?', a: 'No problem. On the Grow package, Month 1 converts from a new website build to a full conversion audit and CRO optimisation of your existing site — same effort, same value, no forced rebuild.' },
+  { q: 'What does the "stack value" mean on the pricing cards?', a: 'It\'s the combined retail value of every deliverable in the package if you sourced each piece separately — design, copywriting, content writing, and link building. You get all of it for the package price, which is why ROI typically lands within the first new client you win.' },
+  { q: 'What if I don\'t hit the guarantee?', a: 'Every package has a specific, written guarantee. Launch: free work until we ship. Grow: Month 4 is free if you don\'t see measurable ranking improvements in 90 days.' },
+  { q: 'What does reporting look like?', a: 'A live performance dashboard plus a monthly review in plain English: what we did, what it moved, and what\'s next. No vanity metrics — just the numbers tied to your revenue.' },
 ];
 
 const HERO_BARS = [38, 30, 52, 46, 64, 58, 80, 72, 100];
@@ -143,7 +122,7 @@ export default function Home() {
     { display: fmt(287, 0, '+', '%'), label: 'Average organic traffic growth in 12 months' },
     { display: fmt(3.4, 1, '', '×'), label: 'More qualified leads after relaunch' },
     { display: fmt(150, 0, '', '+'), label: 'Websites designed, built and grown' },
-    { display: fmt(41, 0, '−', '%'), label: 'Lower cost per lead on paid search' },
+    { display: fmt(92, 0, '', '+'), label: 'Average Core Web Vitals score on delivery' },
   ];
 
   const faqLd = {
@@ -156,8 +135,9 @@ export default function Home() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }} />
       <Nav />
 
-      {/* HERO */}
+      {/* ── HERO ── */}
       <section
+        id="top"
         className="relative flex items-start overflow-hidden px-[clamp(20px,5vw,40px)]"
         style={{ background: 'radial-gradient(1100px 700px at 72% 18%, rgba(23,168,190,.20), transparent 60%), linear-gradient(180deg,#083344 0%,#062430 100%)' }}
       >
@@ -173,10 +153,10 @@ export default function Home() {
               <h1 data-reveal className="font-display font-bold text-[clamp(42px,5.6vw,82px)] leading-[1.04] tracking-[-.03em] text-white m-0 mb-[26px]">
                 We build it.<br />Then we make it <span className="text-teal inline-block leading-none whitespace-nowrap border-b-[.09em] border-orange pb-[.05em]">grow</span>.
               </h1>
-              <p data-reveal className="text-[clamp(17px,1.7vw,21px)] leading-[1.6] text-white/[.72] max-w-[520px] m-0 mb-10">Premium web design paired with SEO and Google Ads — one team accountable for both how it looks and how it performs.</p>
+              <p data-reveal className="text-[clamp(17px,1.7vw,21px)] leading-[1.6] text-white/[.72] max-w-[520px] m-0 mb-10">Premium web design paired with SEO — one team accountable for both how it looks and how it performs.</p>
               <div data-reveal className="flex flex-wrap gap-4">
                 <Link href="/contact" className={btnPrimary}>Book a free call</Link>
-                <Link href="/services" className={btnGhost}>Our services</Link>
+                <a href="#services" onClick={(e) => { e.preventDefault(); document.querySelector('#services')?.scrollIntoView({ behavior: 'smooth' }); }} className={btnGhost}>Our services</a>
               </div>
             </div>
             <div data-reveal className="relative">
@@ -194,7 +174,7 @@ export default function Home() {
                 </div>
                 <div className="flex gap-4 mt-6">
                   <div className="flex-1 bg-teal/[.12] border border-teal/[.25] rounded-[12px] px-4 py-3.5"><div className="font-display font-bold text-[24px] text-white">3.4×</div><div className="text-[12px] text-white/60 mt-0.5">More leads</div></div>
-                  <div className="flex-1 bg-orange/[.12] border border-orange/[.28] rounded-[12px] px-4 py-3.5"><div className="font-display font-bold text-[24px] text-white">−41%</div><div className="text-[12px] text-white/60 mt-0.5">Cost per lead</div></div>
+                  <div className="flex-1 bg-orange/[.12] border border-orange/[.28] rounded-[12px] px-4 py-3.5"><div className="font-display font-bold text-[24px] text-white">90+</div><div className="text-[12px] text-white/60 mt-0.5">Core Web Vitals</div></div>
                 </div>
               </div>
             </div>
@@ -202,27 +182,27 @@ export default function Home() {
         </div>
       </section>
 
-      {/* SERVICES */}
-      <section className={'bg-cloud ' + SEC}>
+      {/* ── SERVICES ── */}
+      <section id="services" className={'bg-cloud ' + SEC}>
         <div className={WRAP}>
           <div className="max-w-[720px] mb-[clamp(40px,5vw,64px)]">
             <div data-reveal className={LABEL}>What we do</div>
-            <h2 data-reveal className={H2}>Three disciplines, <span className="text-teal">one team</span> accountable for the result.</h2>
+            <h2 data-reveal className={H2}>Two disciplines, <span className="text-teal">one team</span> accountable for the result.</h2>
           </div>
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-[22px]">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-[22px] max-w-[860px]">
             {SERVICES.map((svc) => (
-              <Link key={svc.num} href="/services" data-reveal className="flex flex-col bg-white border-[1.5px] border-line rounded-[22px] p-8 no-underline transition-[transform,box-shadow,border-color] duration-[250ms] hover:-translate-y-1.5 hover:shadow-[0_24px_50px_rgba(8,51,68,.12)] hover:border-teal-light">
+              <div key={svc.num} data-reveal className="flex flex-col bg-white border-[1.5px] border-line rounded-[22px] p-8 transition-[transform,box-shadow,border-color] duration-[250ms] hover:-translate-y-1.5 hover:shadow-[0_24px_50px_rgba(8,51,68,.12)] hover:border-teal-light">
                 <div className="font-mono font-semibold text-[15px] text-white w-[46px] h-[46px] rounded-[12px] flex items-center justify-center bg-teal">{svc.num}</div>
                 <h3 className="font-display font-bold text-[27px] text-navy mt-6 mb-2.5">{svc.title}</h3>
                 <p className="text-[17px] leading-[1.6] text-ink-soft m-0 mb-[22px]">{svc.desc}</p>
-                <span className="font-mono text-[13px] tracking-[.08em] text-teal font-semibold">{svc.tag} →</span>
-              </Link>
+                <a href="#pricing" onClick={(e) => { e.preventDefault(); document.querySelector('#pricing')?.scrollIntoView({ behavior: 'smooth' }); }} className="font-mono text-[13px] tracking-[.08em] text-teal font-semibold cursor-pointer">{svc.tag} →</a>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* STATS */}
+      {/* ── STATS ── */}
       <section ref={statsRef} className="relative bg-navy py-[clamp(64px,8vw,110px)] px-[clamp(20px,5vw,40px)] overflow-hidden">
         <div className="absolute inset-0 bg-[url('/web-assets/pixel26-pattern-tile.svg')] bg-[length:200px] opacity-[.05]" />
         <div className={'relative ' + WRAP}>
@@ -239,7 +219,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* PROCESS */}
+      {/* ── PROCESS ── */}
       <section className={'bg-white ' + SEC}>
         <div className={WRAP}>
           <div className="max-w-[720px] mb-[clamp(40px,5vw,64px)]">
@@ -258,15 +238,15 @@ export default function Home() {
         </div>
       </section>
 
-      {/* PRICING */}
-      <section className={'bg-cloud ' + SEC}>
+      {/* ── PRICING ── */}
+      <section id="pricing" className={'bg-cloud ' + SEC}>
         <div className={WRAP}>
           <div className="text-center max-w-[680px] mx-auto mb-[clamp(40px,5vw,60px)]">
             <div data-reveal className={LABEL}>Packages</div>
-            <h2 data-reveal className={H2}>Three services. Each built to <span className="text-teal">pay for itself</span> — fast.</h2>
+            <h2 data-reveal className={H2}>Two services. Each built to <span className="text-teal">pay for itself</span> — fast.</h2>
             <p data-reveal className="text-[18px] leading-[1.6] text-ink-soft m-0 mt-4">Pick the growth lever you need. Stack them when you&apos;re ready to accelerate.</p>
           </div>
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-stretch">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch max-w-[860px] mx-auto">
             {PRICING.map((plan) => {
               const f = plan.featured;
               return (
@@ -283,7 +263,6 @@ export default function Home() {
 
                   {/* Card body */}
                   <div className="flex flex-col flex-1 px-[34px] pt-[26px] pb-[34px]">
-
                     {/* Price */}
                     <div className="mb-1">
                       <div className="flex items-baseline gap-1">
@@ -334,15 +313,14 @@ export default function Home() {
             })}
           </div>
 
-          {/* Bottom trust note */}
           <p data-reveal className="text-center font-mono text-[13px] text-muted mt-[clamp(28px,3vw,40px)]">
             All engagements include a plain-English onboarding call and a clear scope before any work starts.
           </p>
         </div>
       </section>
 
-      {/* FAQ */}
-      <section className={'bg-white ' + SEC}>
+      {/* ── FAQ ── */}
+      <section id="faq" className={'bg-white ' + SEC}>
         <div className="max-w-[880px] mx-auto">
           <div className="text-center mb-[clamp(40px,5vw,56px)]">
             <div data-reveal className={LABEL}>Questions</div>
@@ -361,7 +339,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CTA */}
+      {/* ── CTA ── */}
       <section className="relative bg-[linear-gradient(135deg,#0F6F7E_0%,#17A8BE_100%)] py-[clamp(64px,8vw,118px)] px-[clamp(20px,5vw,40px)] overflow-hidden">
         <div className="absolute inset-0 bg-[url('/web-assets/pixel26-pattern-tile.svg')] bg-[length:200px] opacity-[.08]" />
         <div data-reveal className="relative max-w-[880px] mx-auto text-center">

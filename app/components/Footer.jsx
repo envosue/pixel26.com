@@ -15,7 +15,7 @@ export default function Footer() {
         <div className="p26-fcols">
           <div className="min-w-[240px]">
             <img src="/web-assets/pixel26-logo-reversed.svg" alt="Pixel26" className="h-9 block mb-[22px]" />
-            <p className="text-[17px] leading-[1.6] text-white/60 m-0 mb-[26px] max-w-[330px]">A digital studio for ambitious businesses. Premium websites, then growth through SEO and Google Ads.</p>
+            <p className="text-[17px] leading-[1.6] text-white/60 m-0 mb-[26px] max-w-[330px]">A digital studio for ambitious businesses. Premium websites, then growth through SEO.</p>
             <div className="flex gap-3">
               {['in', 'X', 'ig'].map((t) => (
                 <a key={t} href="#" aria-label={t} className="w-10 h-10 rounded-[10px] bg-teal-light/10 border border-teal-light/[.18] flex items-center justify-center text-teal-light no-underline font-mono text-[14px] font-semibold hover:bg-teal/[.28] transition-colors">{t}</a>
@@ -25,16 +25,16 @@ export default function Footer() {
           <div>
             <div className={heading}>Services</div>
             <div className="flex flex-col gap-3.5">
-              <Link href="/services" className={colLink}>Web Design</Link>
-              <Link href="/services" className={colLink}>SEO</Link>
-              <Link href="/services" className={colLink}>Google Ads</Link>
+              <a href="#services" className={colLink}>Web Design</a>
+              <a href="#services" className={colLink}>SEO</a>
             </div>
           </div>
           <div>
-            <div className={heading}>Company</div>
+            <div className={heading}>Quick links</div>
             <div className="flex flex-col gap-3.5">
-              <Link href="/about" className={colLink}>About</Link>
-              <Link href="/contact" className={colLink}>Contact</Link>
+              <a href="#pricing" className={colLink}>Pricing</a>
+              <a href="#faq" className={colLink}>FAQ</a>
+              <Link href="/contact" className={colLink}>Book a call</Link>
             </div>
           </div>
           <div>
