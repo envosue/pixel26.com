@@ -30,6 +30,18 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
+        {/* Google tag (GTM-W9NJM39F). Consent Mode: denied until the visitor accepts in CookieBanner. */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+var p26c = null; try { p26c = localStorage.getItem('p26_cookie_consent'); } catch (e) {}
+var p26g = p26c === 'accepted' ? 'granted' : 'denied';
+gtag('consent', 'default', { ad_storage: p26g, ad_user_data: p26g, ad_personalization: p26g, analytics_storage: p26g });
+gtag('js', new Date());`,
+          }}
+        />
+        <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-W9NJM39F"></script>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link

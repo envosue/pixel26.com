@@ -31,6 +31,15 @@ export default function CookieBanner() {
     } catch {
       // fail silently
     }
+    if (typeof window.gtag === 'function') {
+      const state = choice === 'accepted' ? 'granted' : 'denied';
+      window.gtag('consent', 'update', {
+        ad_storage: state,
+        ad_user_data: state,
+        ad_personalization: state,
+        analytics_storage: state,
+      });
+    }
     setVisible(false);
   };
 
