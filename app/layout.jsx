@@ -38,10 +38,9 @@ function gtag(){dataLayer.push(arguments);}
 var p26c = null; try { p26c = localStorage.getItem('p26_cookie_consent'); } catch (e) {}
 var p26g = p26c === 'accepted' ? 'granted' : 'denied';
 gtag('consent', 'default', { ad_storage: p26g, ad_user_data: p26g, ad_personalization: p26g, analytics_storage: p26g });
-gtag('js', new Date());`,
+(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-W9NJM39F');`,
           }}
         />
-        <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-W9NJM39F"></script>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link
@@ -54,6 +53,14 @@ gtag('js', new Date());`,
         </noscript>
       </head>
       <body>
+        <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-W9NJM39F"
+            height="0"
+            width="0"
+            style={{ display: 'none', visibility: 'hidden' }}
+          />
+        </noscript>
         {children}
         <Analytics />
         <ScrollReveal />
