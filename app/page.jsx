@@ -189,7 +189,7 @@ export default function Home() {
             <div data-reveal className={LABEL}>What we do</div>
             <h2 data-reveal className={H2}>Two disciplines, <span className="text-teal">one team</span> accountable for the result.</h2>
           </div>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-[22px] max-w-[860px]">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-[22px] max-w-[860px]">
             {SERVICES.map((svc) => (
               <div key={svc.num} data-reveal className="flex flex-col bg-white border-[1.5px] border-line rounded-[22px] p-8 transition-[transform,box-shadow,border-color] duration-[250ms] hover:-translate-y-1.5 hover:shadow-[0_24px_50px_rgba(8,51,68,.12)] hover:border-teal-light">
                 <div className="font-mono font-semibold text-[15px] text-white w-[46px] h-[46px] rounded-[12px] flex items-center justify-center bg-teal">{svc.num}</div>
